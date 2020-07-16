@@ -24,3 +24,4 @@ fetch = async function(){  // creating a dummy fetch function that resolves to a
 		return await oldFetch.apply(window, arguments);
 	}
 }
+window.dispatchEvent(new CustomEvent('scroll'));

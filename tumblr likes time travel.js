@@ -10,7 +10,8 @@ fetch = async function(){  // creating a dummy fetch function that resolves to a
 		j.response.likedPosts = [];
 		let datestring = prompt("enter a date in the format matching how today's date is displayed here: "+new Date().toLocaleDateString());
 		let date = new Date(datestring);
-		let before = ""+(date.getTime()/1000);
+		date.setHours(23, 59, 59)
+		let before = ""+(Math.round(date.getTime()/1000));
 		if("before" in j.response.links.next.queryParams){
 			j.response.links.next.href = j.response.links.next.href.replace(/before=\d+/, "before="+before);
 		}else{
